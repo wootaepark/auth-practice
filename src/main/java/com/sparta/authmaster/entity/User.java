@@ -31,13 +31,29 @@ public class User {
 	@Column(unique = true)
 	private String username;
 
-	@Column(nullable = false)
+	@Column
 	private String password;
 
 
-	@Column(name = "join_path", nullable = false)
+	@Column(name = "join_path",nullable = false)
 	@Enumerated(value = EnumType.STRING)
 	private JoinPath joinPath;
+
+	@Column(nullable = false)
+	@Enumerated(value = EnumType.STRING)
+	private Role role;
+
+	@Column
+	private String provider;
+
+	@Column
+	private String providerId;
+
+
+	public User update(String username){
+		this.username = username;
+		return this;
+	}
 
 
 

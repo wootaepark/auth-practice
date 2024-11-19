@@ -5,7 +5,8 @@ import lombok.Getter;
 @Getter
 public enum JoinPath {
 	KAKAO("KAKAO"),
-	BASIC("BASIC");
+	BASIC("BASIC"),
+	GOOGLE("GOOGLE"),;
 
 	private final String joinPathValue;
 
