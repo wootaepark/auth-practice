@@ -12,6 +12,7 @@ import com.sparta.authmaster.controller.dto.LoginDto;
 import com.sparta.authmaster.controller.dto.LoginSuccessResp;
 import com.sparta.authmaster.controller.dto.RegisterDto;
 import com.sparta.authmaster.controller.dto.VerifiedMember;
+import com.sparta.authmaster.interceptor.Auth;
 
 import lombok.RequiredArgsConstructor;
 
@@ -35,7 +36,7 @@ public class AuthController {
 	}
 
 	@GetMapping("/info") // 유저 정보 출력
-	public ResponseEntity<Void> info(VerifiedMember verifiedMember){
+	public ResponseEntity<Void> info(@Auth VerifiedMember verifiedMember){
 		System.out.println(verifiedMember.email());
 		return ResponseEntity.ok().build();
 	}
